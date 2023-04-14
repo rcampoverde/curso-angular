@@ -7,16 +7,25 @@ import { InicioComponent } from './pages/inicio/inicio.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import {NgOptimizedImage} from "@angular/common";
 
+//PrimeNG
+import { ButtonModule } from 'primeng/button';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { PaginaTablaComponent } from './pages/pagina-tabla/pagina-tabla.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     InicioComponent,
-    LoadingComponent
+    LoadingComponent,
+    PaginaTablaComponent
   ],
     imports: [
         BrowserModule,
         AppRoutingModule,
-        NgOptimizedImage
+        NgOptimizedImage,
+        //PrimeNG
+        BrowserAnimationsModule,
+        ButtonModule
     ],
   providers: [],
   bootstrap: [AppComponent]

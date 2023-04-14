@@ -1,3 +1,5 @@
 <h1>{{ nombre }} {{ apellido }}</h1>
 <app-loading [visible]="loadingVisible"></app-loading>
-<button (click)="changeVisible()">Ver loading</button>
+
+<p-button (click)="changeVisible()" label="Ver loading"></p-button>
+<p-button (click)="redirectPaginaTabla()" label="Botón Prueba" icon="pi pi-save" iconPos="right"></p-button>
