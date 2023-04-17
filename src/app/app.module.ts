@@ -11,6 +11,8 @@ import {NgOptimizedImage} from "@angular/common";
 import { ButtonModule } from 'primeng/button';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { PaginaTablaComponent } from './pages/pagina-tabla/pagina-tabla.component';
+import { TableModule } from 'primeng/table';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -23,9 +25,11 @@ import { PaginaTablaComponent } from './pages/pagina-tabla/pagina-tabla.componen
         BrowserModule,
         AppRoutingModule,
         NgOptimizedImage,
+        HttpClientModule,
         //PrimeNG
         BrowserAnimationsModule,
-        ButtonModule
+        ButtonModule,
+        TableModule
     ],
   providers: [],
   bootstrap: [AppComponent]
