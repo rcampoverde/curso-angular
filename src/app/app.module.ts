@@ -15,13 +15,17 @@ import { TableModule } from 'primeng/table';
 import { HttpClientModule } from "@angular/common/http";
 import { PanelModule } from "primeng/panel";
 import {TabMenuModule} from "primeng/tabmenu";
+import {MenubarModule} from "primeng/menubar";
+import { MenuComponent } from './components/menu/menu.component';
+import {ToastModule} from "primeng/toast";
 
 @NgModule({
   declarations: [
     AppComponent,
     InicioComponent,
     LoadingComponent,
-    PaginaTablaComponent
+    PaginaTablaComponent,
+    MenuComponent
   ],
     imports: [
         BrowserModule,
@@ -33,7 +37,9 @@ import {TabMenuModule} from "primeng/tabmenu";
         ButtonModule,
         TableModule,
         PanelModule,
-        TabMenuModule
+        TabMenuModule,
+        MenubarModule,
+        ToastModule
     ],
   providers: [],
   bootstrap: [AppComponent]
