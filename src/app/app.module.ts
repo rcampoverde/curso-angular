@@ -18,6 +18,8 @@ import {TabMenuModule} from "primeng/tabmenu";
 import {MenubarModule} from "primeng/menubar";
 import { MenuComponent } from './components/menu/menu.component';
 import {ToastModule} from "primeng/toast";
+import {ReactiveFormsModule} from "@angular/forms";
+import {InputTextModule} from "primeng/inputtext";
 
 @NgModule({
   declarations: [
@@ -27,20 +29,22 @@ import {ToastModule} from "primeng/toast";
     PaginaTablaComponent,
     MenuComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        NgOptimizedImage,
-        HttpClientModule,
-        //PrimeNG
-        BrowserAnimationsModule,
-        ButtonModule,
-        TableModule,
-        PanelModule,
-        TabMenuModule,
-        MenubarModule,
-        ToastModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgOptimizedImage,
+    HttpClientModule,
+    ReactiveFormsModule,
+    //PrimeNG
+    BrowserAnimationsModule,
+    ButtonModule,
+    TableModule,
+    PanelModule,
+    TabMenuModule,
+    MenubarModule,
+    ToastModule,
+    InputTextModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

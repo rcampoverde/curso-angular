@@ -1,26 +1,26 @@
-import { Component, inject } from '@angular/core';
-import { Router } from "@angular/router";
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
   styleUrls: ['./inicio.component.css']
 })
-export class InicioComponent {
+
+export class InicioComponent implements OnInit{
   nombre: string = 'Rubén';
   apellido: string = 'Campoverde';
   loadingVisible: boolean = false;
+  formUsuario!: FormGroup;
 
-  private readonly router: Router = inject(Router);
-
-  changeVisible(): void {
-    this.loadingVisible = !this.loadingVisible;
-    setTimeout(() => {
-      this.loadingVisible = !this.loadingVisible;
-    }, 2000);
+  ngOnInit(): void {
+    this.buildForm();
   }
 
-  redirectPaginaTabla(): void {
-    this.router.navigate(['tabla']);
+  buildForm(): void {
+    this.formUsuario = new FormGroup<any>({
+      nombre: new FormControl('', Validators.required),
+      apellido: new FormControl('', Validators.required),
+    });
   }
 }

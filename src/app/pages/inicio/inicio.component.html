@@ -1,5 +1,15 @@
 <h1>{{ nombre }} {{ apellido }}</h1>
 <app-loading [visible]="loadingVisible"></app-loading>
 
-<p-button (click)="changeVisible()" label="Ver loading"></p-button>
-<p-button (click)="redirectPaginaTabla()" label="Botón Prueba" icon="pi pi-save" iconPos="right"></p-button>
+<p-panel header="Formulario Reactivo">
+  <form [formGroup]="formUsuario" class="formgrid grid">
+    <div class="field col-12 md:col-6">
+      <label for="name">Nombre</label>
+      <input id="name" type="text" pInputText formControlName="nombre" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+    </div>
+    <div class="field col-12 md:col-6">
+      <label for="apellido">Apellido</label>
+      <input id="apellido" type="text" pInputText formControlName="apellido" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+    </div>
+  </form>
+</p-panel>
