@@ -3,15 +3,22 @@
 <app-loading [visible]="loadingVisible"></app-loading>
 
 <p-panel header="Formulario Reactivo">
-  <form [formGroup]="formUsuario" class="formgrid grid">
+  <form [formGroup]="formEmpleado" class="formgrid grid">
     <div class="field col-12 md:col-6">
       <label for="name">Nombre</label>
-      <input id="name" type="text" pInputText formControlName="nombre" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+      <input id="name" type="text" pInputText formControlName="name" class="text-base text-color surface-overlay p-2 border-1 border-solid border-round appearance-none outline-none focus:border-primary w-full">
+      <small class="p-error" *ngIf="formEmpleado.get('name')?.hasError('required')">Nombre no puede estar vacío</small>
     </div>
     <div class="field col-12 md:col-6">
-      <label for="apellido">Apellido</label>
-      <input id="apellido" type="text" pInputText formControlName="apellido" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+      <label for="salary">Salario</label>
+      <input id="salary" type="text" pInputText formControlName="salary" class="text-base text-color surface-overlay p-2 border-1 border-solid border-round appearance-none outline-none focus:border-primary w-full">
+      <small class="p-error" *ngIf="formEmpleado.get('salary')?.hasError('required')">Salario no puede estar vacío</small>
     </div>
-    <p-button label="Verificar" (onClick)="verificar()"></p-button>
+    <div class="field col-12 md:col-6">
+      <label for="age">Edad</label>
+      <input id="age" type="text" pInputText formControlName="age" class="text-base text-color surface-overlay p-2 border-1 border-solid border-round appearance-none outline-none focus:border-primary w-full">
+      <small class="p-error" *ngIf="formEmpleado.get('age')?.hasError('required')">Edad no puede estar vacío</small>
+    </div>
+    <p-button label="Guardar" (onClick)="guardar()"></p-button>
   </form>
 </p-panel>

@@ -11,3 +11,15 @@ export interface IDataEmpleado {
   employee_age: number;
   profile_image: string;
 }
+
+export interface IEmpleadoPost {
+  status: string;
+  data: IDataEmpleadoPost;
+}
+
+export interface IDataEmpleadoPost {
+  id?: number;
+  name: string;
+  salary: number;
+  age: number;
+}
