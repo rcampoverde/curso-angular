@@ -7,7 +7,7 @@ import {MenuItem} from "primeng/api";
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit{
-  listMenu!: MenuItem[];
+  listMenu: MenuItem[] = [];
 
   ngOnInit(): void {
     this.initListaMenu();

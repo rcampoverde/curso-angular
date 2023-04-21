@@ -9,5 +9,5 @@ export interface IDataEmpleado {
   employee_name: string;
   employee_salary: number;
   employee_age: number;
-  profile_image: string | null;
+  profile_image: string;
 }

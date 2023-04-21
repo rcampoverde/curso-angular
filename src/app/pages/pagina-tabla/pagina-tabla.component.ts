@@ -8,7 +8,6 @@ import {MessageService} from "primeng/api";
   selector: 'app-pagina-tabla',
   templateUrl: './pagina-tabla.component.html',
   styleUrls: ['./pagina-tabla.component.css'],
-  providers: [MessageService]
 })
 export class PaginaTablaComponent implements OnInit{
   private readonly router: Router = inject(Router);
@@ -17,8 +16,8 @@ export class PaginaTablaComponent implements OnInit{
 
   columnasTabla: any = [];
   loading: boolean = false;
+  employees: IDataEmpleado[] = [];
 
-  employees!: IDataEmpleado[];
   backInicio(): void {
     this.router.navigate(['inicio']).then();
   }
@@ -27,13 +26,14 @@ export class PaginaTablaComponent implements OnInit{
     this.initColumnaTabla();
     this.loading = true;
     this.empleadoService.getAllEmployees().subscribe({
-      next: (res: IEmpleado) => {
+      next: (res: IEmpleado): void => {
         this.employees = res.data;
         this.loading = false;
+        this.messageService.add({ severity: 'success', summary: 'Satisfactorio', detail: 'Exito' });
       },
-      error: (error: any) => {
-        console.log(error);
+      error: (error: any): void => {
         this.loading = false;
+        this.messageService.add({ severity: 'error', summary: 'Error', detail: error.error.message });
       }
     });
   }
@@ -41,14 +41,9 @@ export class PaginaTablaComponent implements OnInit{
   initColumnaTabla(): void {
     this.columnasTabla = [
       { field: 'id', header: 'Id' },
-      { field: 'nombre', header: 'Nombre' },
-      { field: 'salario', header: 'Salario' },
+      { field: 'nombre', header: 'Nombre Empleado' },
+      { field: 'salario', header: 'Salario Empleado' },
       { field: 'edad', header: 'Edad' },
     ];
   }
-
-  show() {
-    this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Message Content' });
-  }
-
 }

@@ -20,6 +20,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import {ToastModule} from "primeng/toast";
 import {ReactiveFormsModule} from "@angular/forms";
 import {InputTextModule} from "primeng/inputtext";
+import {MessageService} from "primeng/api";
 
 @NgModule({
   declarations: [
@@ -45,7 +46,7 @@ import {InputTextModule} from "primeng/inputtext";
     ToastModule,
     InputTextModule
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
